@@ -11,7 +11,7 @@ $(document).ready(initLoad);
 /* Register events listeners */
 $('#mynav > ul > li > a').on('click',function(){var that=this; mycollapse(that);});//navigation
 $('.thumbnail > p > button').on('click',function(){var that=this; loadm(that);});//DETALII button click
-$(window).on('load',function(){handleGoogleCalendar();});//CHECK GOOGLE CALENDAR EVENTS
+//$(window).on('load',function(){handleGoogleCalendar();});//CHECK GOOGLE CALENDAR EVENTS
 $('#my_form').on('submit',function(){submitForm();return false;});//submit contact form
 /*------*/
 /* BACK TO TOP */
@@ -25,12 +25,12 @@ function b2top(){
     });
     $('#back-to-top').on('click',function (event) {
         event.preventDefault();
-        $('#back-to-top').tooltip('hide');
+        $('#back-to-top').css('display','none');
         $('html,body').animate({
             scrollTop: 0
         }, 800);
     });
-    $('#back-to-top').tooltip('show');
+    $('#back-to-top').css('display','block');
 }
 /*------*/
 /* SMOOTH SCROLLING TO ELEMENTS LINKED FROM a element W/ CLASS slowmo; e.g menu link to href target on the page */
@@ -41,7 +41,7 @@ function smoothMove(){
         var id = $(this).attr('href');
         var oh = $(id).offset()["top"];
         $('html,body').animate({
-            scrollTop: oh
+            scrollTop: (oh-68)
             }, 800);  
         });
     });

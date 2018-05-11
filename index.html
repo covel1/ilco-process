@@ -8,7 +8,8 @@
         <meta name="author" content="ILCOtrain Consulting S.R.L.">
         <meta name="keywords" content="analiza,organizare,proces,productivitate">
         <link rel="icon" href="./img/favicon.ico">
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!--<link href="./css/style.css" rel="stylesheet">-->
 		<link href="./css/style_new.css" rel="stylesheet">
@@ -37,7 +38,7 @@
                 <p id="motto">Dezvoltare personală prin educație financiară</p>
             </div>
         </div>-->
-		<nav class="navbar navbar-expand-md navbar-light sticky-top" id="mainNav">
+		<nav class="navbar navbar-expand-md navbar-light fixed-top" id="mainNav">
 		<div class="container justify-content-center">
         <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,22 +62,19 @@
 			</div>
 		</div>
 		</nav>
-		<div class="container">
+		<div class="container" style="padding-top:68px">
 
 			<div class="row justify-content-center">
-				<div class="col-md-7">
-					<blockquote class="blockquote" style="opacity:0.7">
-						<h4 class="display-4">dacă nu poți descrie ceea ce faci ca pe un proces, înseamna că nu știi ce faci</h4>
-						<footer class="blockquote-footer">W. Edwards Deming</footer>
-					</blockquote>
-				</div>
+				<blockquote class="blockquote col-md-7" style="opacity:0.7">
+					<p class="display-4">dacă nu poți descrie ceea ce faci ca pe un proces, înseamna că nu știi ce faci</p>
+					<footer class="blockquote-footer">W. Edwards Deming</footer>
+				</blockquote>
 			</div>
 
 		
 			<div class="row justify-content-center">
 				<div class="col-md-4 card-body teas" id="gand">
-					<p>Gândurile ne controlează viața. În ce măsură dezvoltarea personală prin educarea abilităților economice schimbă modul in
-						care gândim, întărindu-ne încrederea într-un viitor prosper ?</p>
+					<p>Ești mândru de afacerea ta. Ai sacrificat nenumărate zile și nopți iar acum ai dori să ai mai multă liniște. Te aștepți ca lucrurile să meargă așa cum le-ai gândit dar te îngrijorează scăderea productivitații. Dacă observi <a href="#simpt" class="slowmo">aceste simptome</a>, ar trebui să revezi organizarea proceselor de business.</p> 
 				</div>
 				<div class="col-md-4 card-body teas" id="sentm">
 					<p>N-ar fi grozav ca această schimbare să fie însoțită de un sentiment de eliberare? Eliberare venită din asigurarea
@@ -116,6 +114,11 @@
 					</ul>
 				</div>         
 			</div>
+			<div class = "row justify-content-center">
+				<div id="simpt" class="col-md-7">
+				lista simptome
+				</div>
+			</div>
 			<div class = "row">
 				<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 events">
 					<div class="headEv"></div>
@@ -141,7 +144,8 @@
 				<div class="col-sm-8">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Errem vivendum vim ex, modus interesset te vel, in petentium rationibus his. Brute tation voluptatum nam at, id doming eligendi necessitatibus his, ex pertinax imperdiet nam.</p>
 				</div>		
-				<script>
+				<!--<script>
+				/*
 				var myImage = document.querySelector('#testimg');
 
 					fetch('http://covel.dx.am/img/imag1.jpg').then(function(response) {
@@ -150,7 +154,8 @@
 					  var objectURL = URL.createObjectURL(myBlob);
 					  myImage.src = objectURL;
 					});
-				</script> 
+				*/	
+				</script>--> 
 			</div>
 			<div class="row">
 			<h2 class="titlu">Module program</h2>
@@ -160,7 +165,7 @@
 				<div class="col-xs-6 col-sm-4 col-lg-3" style="position:relative">
 				<div class="thumbnail">
 				  <img class="spinner" src="./img/giphy.gif" style="display:none" alt="spinner">  
-				  <img src="./repo/thumb/M04.png" alt="M04">
+				  <!--<img src="./repo/thumb/M04.png" alt="M04">-->
 				  <hr>
 					<p><button type="button" class="btn btn-primary" id="M04">Detalii</button></p>
 				</div>
@@ -168,7 +173,7 @@
 				<div class="col-xs-6 col-sm-4 col-lg-3" style="position:relative">
 				<div class="thumbnail">
 				  <img class="spinner" src="./img/giphy.gif" style="display:none" alt="spinner">  
-				  <img src="./repo/thumb/M01.png" alt="M01">
+				  <!--<img src="./repo/thumb/M01.png" alt="M01">-->
 				  <hr>
 					<p><button type="button" class="btn btn-primary" id="M01">Detalii</button></p>
 				</div>
@@ -176,7 +181,7 @@
 				<div class="col-xs-6 col-sm-4 col-lg-3" style="position:relative">
 				<div class="thumbnail">
 				  <img class="spinner" src="./img/giphy.gif" style="display:none" alt="spinner">  
-				  <img src="./repo/thumb/M02.png" alt="M02">
+				  <!--<img src="./repo/thumb/M02.png" alt="M02">-->
 				  <hr>
 					<p><button type="button" class="btn btn-primary" id="M02">Detalii</button></p>
 				</div>
@@ -184,7 +189,7 @@
 				<div class="col-xs-6 col-sm-4 col-lg-3" style="position:relative">
 				<div class="thumbnail">
 				  <img class="spinner" src="./img/giphy.gif" style="display:none" alt="spinner">  
-				  <img src="./repo/thumb/M03.png" alt="M03">
+				  <!--<img src="./repo/thumb/M03.png" alt="M03">-->
 				  <hr> 
 					<p><button type="button" class="btn btn-primary" id="M03">Detalii</button></p>
 				</div>
@@ -197,8 +202,6 @@
 				</div>    
 			</div>
 			<hr>
-			<p id="contact">Contact</p>
-			
 			
 			<footer class="section"> 
 				<div class="container">
@@ -210,9 +213,13 @@
 				</div>
 			</footer>
 		</div><!-- /container -->
+		<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" data-toggle="tooltip" data-placement="center">
+               <span class="fas fa-angle-up"></span>
+            </a>
             
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
             <script src="./js/contactForm.js"></script>
             <script src="./js/ilco.js"></script>
             
