@@ -39,9 +39,9 @@ function smoothMove(){
         $(this).on('click',function(event){
         event.preventDefault();
         var id = $(this).attr('href');
-        var oh = $(id).offset()["top"];
+        var oh = $(id).offset()["top"]-68;
         $('html,body').animate({
-            scrollTop: (oh-68)
+            scrollTop: oh
             }, 800);  
         });
     });
