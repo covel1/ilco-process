@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 function initLoad(){
-    b2top();
+    //b2top();
     smoothMove();
 }          
 $(document).ready(initLoad);
@@ -14,7 +14,7 @@ $('.thumbnail > p > button').on('click',function(){var that=this; loadm(that);})
 //$(window).on('load',function(){handleGoogleCalendar();});//CHECK GOOGLE CALENDAR EVENTS
 $('#my_form').on('submit',function(){submitForm();return false;});//submit contact form
 /*------*/
-/* BACK TO TOP */
+/* BACK TO TOP 
 function b2top(){
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
@@ -32,7 +32,7 @@ function b2top(){
     });
     $('#back-to-top').css('display','block');
 }
-/*------*/
+*/
 /* SMOOTH SCROLLING TO ELEMENTS LINKED FROM a element W/ CLASS slowmo; e.g menu link to href target on the page */
 function smoothMove(){
     $(".slowmo").each(function(){
