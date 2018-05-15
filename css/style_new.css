@@ -9,6 +9,11 @@
     opacity: 0.7;
 }
 */
+@media screen and (min-width: 729px) {
+	.navbar-brand {
+		position: absolute;
+	}
+}
 #gand,#sentm,#prop {
 	text-align: center;
 }
