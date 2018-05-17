@@ -3,10 +3,20 @@
 */
 $('#navbarResponsive').on('show.bs.collapse', (e) => {
 $('.navbar-toggler').blur();
-})
+});
 $('#navbarResponsive').on('hide.bs.collapse', (e) => {
 $('.navbar-toggler').blur();
-})
+});
+
+/**
+* Collapse nav when click anywhere 
+*/
+$('#navbarResponsive').on('shown.bs.collapse', (e) => {
+	addEventListener('click', ()=>{
+		$('#navbarResponsive').collapse('hide') 
+	})
+});
+
 
 function initLoad(){
     //b2top();
