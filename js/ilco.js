@@ -29,8 +29,8 @@ $(document).ready(initLoad);
 * Call navig() to record the target for feeding browser's history
 */
 function smoothMove(){
-    $(".slowmo").each(function(){
-        $(this).on('click',function(event){
+    $(".slowmo").each(function() {
+        $(this).on('click',(event) => {
         event.preventDefault();
         var id = $(this).attr('href');
         var oh = $(id).offset()["top"]-68;
@@ -52,8 +52,7 @@ function navig (p){
         history.pushState({i:b},'',b);    
     }       
 }
-window.onpopstate = function(event) {
-    //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+window.onpopstate = (event) => {
     if(event.state!==null){
     var el = event.state.i;
     //console.log(el);
