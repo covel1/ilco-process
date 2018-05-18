@@ -17,36 +17,17 @@ $('#navbarResponsive').on('shown.bs.collapse', (e) => {
 	})
 });
 
-
 function initLoad(){
     //b2top();
     smoothMove();
-}          
-$(document).ready(initLoad);
-/* Register events listeners */
-//$('#mynav > ul > li > a').on('click',function(){var that=this; mycollapse(that);});//navigation
-//$('#my_form').on('submit',function(){submitForm();return false;});//submit contact form
-/*------*/
-/* BACK TO TOP 
-function b2top(){
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-            $('#back-to-top').fadeIn();
-        } else {
-            $('#back-to-top').fadeOut();
-        }
-    });
-    $('#back-to-top').on('click',function (event) {
-        event.preventDefault();
-        $('#back-to-top').css('display','none');
-        $('html,body').animate({
-            scrollTop: 0
-        }, 800);
-    });
-    $('#back-to-top').css('display','block');
 }
+
+$(document).ready(initLoad);
+
+/**
+* Smooth scrolling to elements linked by 'a' having 'slowmo' class (e.g. menu link to a href target on the page).
+* Call navig() to record the target for feeding browser's history
 */
-/* SMOOTH SCROLLING TO ELEMENTS LINKED FROM a element W/ CLASS slowmo; e.g menu link to href target on the page */
 function smoothMove(){
     $(".slowmo").each(function(){
         $(this).on('click',function(event){
@@ -55,21 +36,15 @@ function smoothMove(){
         var oh = $(id).offset()["top"]-68;
         $('html,body').animate({
             scrollTop: oh
-            }, 800);  
-        });
-    });
+            }, 800);
+		navig(this);
+        });	
+    });	
 }
-/*------*/
-/* COLLAPSE NAVBAR IN MOBILE VIEW AFTER CLICKING AN ITEM. CALL NAVIG HISTORY*/
-function mycollapse(v){
-    var el = v;
-    if ($(window).width()<767){
-        document.getElementById('mynav').getAttributeNode('class').value = 'navbar-collapse collapse';
-    }
-    navig(el);  
-}
-/*------*/
-/* USE BROWSER HISTORY TO ALLOW NAVIG IN A SINGLE PAGE APP */
+
+/**
+* Feed browser's history as such to be used by 'back' and 'forward' buttons of the browser
+*/
 function navig (p){
     if (p!==undefined){
         var a = p;
@@ -93,3 +68,40 @@ window.onpopstate = function(event) {
           }, 800);
     }
 };
+
+
+          
+
+/* Register events listeners */
+//$('#mynav > ul > li > a').on('click',function(){var that=this; mycollapse(that);});//navigation
+//$('#my_form').on('submit',function(){submitForm();return false;});//submit contact form
+/*------*/
+/* BACK TO TOP 
+function b2top(){
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+    $('#back-to-top').on('click',function (event) {
+        event.preventDefault();
+        $('#back-to-top').css('display','none');
+        $('html,body').animate({
+            scrollTop: 0
+        }, 800);
+    });
+    $('#back-to-top').css('display','block');
+}
+*/
+
+/* COLLAPSE NAVBAR IN MOBILE VIEW AFTER CLICKING AN ITEM. CALL NAVIG HISTORY
+function mycollapse(v){
+    var el = v;
+    if ($(window).width()<767){
+        document.getElementById('mynav').getAttributeNode('class').value = 'navbar-collapse collapse';
+    }
+    navig(el);  
+}
+*/
