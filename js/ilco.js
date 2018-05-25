@@ -56,7 +56,7 @@ window.onpopstate = (event) => {
     if(event.state!==null){
     var el = event.state.i;
     //console.log(el);
-    var hi = $(el).offset().top;
+    var hi = $(el).offset().top-68;
     $('html,body').animate({
       scrollTop: hi
       }, 800);

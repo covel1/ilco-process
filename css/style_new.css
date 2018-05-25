@@ -9,6 +9,12 @@
     opacity: 0.7;
 }
 */
+blockquote:before {
+	font-family: 'FontAwesome';
+    content: '\f10e';
+    font-size: 3rem;
+    color: grey;
+}
 @media screen and (min-width: 729px) {
 	.navbar-brand {
 		position: absolute;
