@@ -33,7 +33,7 @@ function smoothMove(){
         $(this).on('click',(event) => {
         event.preventDefault();
         var id = $(this).attr('href');
-        var oh = $(id).offset()["top"]-68;
+        var oh = $(id).offset()["top"]-72;
         $('html,body').animate({
             scrollTop: oh
             }, 800);
@@ -56,7 +56,7 @@ window.onpopstate = (event) => {
     if(event.state!==null){
     var el = event.state.i;
     //console.log(el);
-    var hi = $(el).offset().top-68;
+    var hi = $(el).offset().top-72;
     $('html,body').animate({
       scrollTop: hi
       }, 800);
