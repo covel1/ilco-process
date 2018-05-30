@@ -9,6 +9,9 @@
     opacity: 0.7;
 }
 */
+.padding-top {
+	padding-top: 3rem;
+}
 blockquote:before {
 	font-family: 'FontAwesome';
     content: '\f10e';
