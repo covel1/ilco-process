@@ -1,10 +1,36 @@
+h1.col-md-7 {
+	opacity: 0.7;
+	font-weight: 300;
+}
+#front {
+	text-align: center;
+}
+button.navbar-toggler.navbar-toggler-right {
+	border-color: transparent;
+	background-image: url('/img/hmbg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 1.2rem;
+}
+button.btn.btn-primary {
+	margin-bottom:1rem;
+}
+#mainCnt {
+	padding-top: 5.625rem;
+}
+blockquote.blockquote {
+	opacity: 0.7;
+}
+p.card-text {
+	opacity: 0.85;
+}
 .padding-top {
 	padding-top: 3rem;
 }
 blockquote:before {
 	font-family: 'FontAwesome';
     content: '\f10e';
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: grey;
 }
 #gand,#sentm,#prop {
@@ -37,7 +63,7 @@ blockquote:before {
 	background-color: white;
 	opacity: 1;
 	z-index: 1000;
-	min-height: 68px;
+	min-height: 4.25rem;
 }
 footer h5.text-center {
 	font-size: 0.8rem;
@@ -55,4 +81,11 @@ footer h5.text-center {
 	font-family: 'FontAwesome';
     content: '\f106';
 }
-
+#navbarResponsive {
+	margin-left: -8rem;
+}
+@media screen and (max-width: 319px){
+	h1 {
+		font-size: 2rem;
+	}
+}
