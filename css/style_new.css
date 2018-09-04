@@ -1,13 +1,13 @@
 h1.col-md-7 {
 	opacity: 0.7;
-	font-weight: 400;
+	font-weight: 300;
 }
 #front {
 	text-align: center;
 }
 button.navbar-toggler.navbar-toggler-right {
 	border-color: transparent;
-	background-image: url('/img/hmbg.png');
+	background-image: url('../img/hmbg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	min-height: 1.2rem;
