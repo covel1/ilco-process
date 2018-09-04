@@ -81,11 +81,13 @@ footer h5.text-center {
 	font-family: 'FontAwesome';
     content: '\f106';
 }
-#navbarResponsive {
-	margin-left: -8rem;
-}
 @media screen and (max-width: 319px){
 	h1 {
 		font-size: 2rem;
 	}
+}
+@media screen and (min-width: 768px){
+	#navbarResponsive {
+	margin-left: -8rem;
+}
 }
