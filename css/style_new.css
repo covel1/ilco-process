@@ -1,3 +1,48 @@
+h1 {
+	font-size: 2rem;
+}
+.cta {
+	flex-direction: row;
+	border-style: none;
+}
+.cta p {
+	font-size: 1.25rem;
+}
+.cta .card-body {
+	background-color: #413392;
+	color:#d3cd36;
+	border-radius: .5em;
+}
+.action {
+	background-color: #d3cd36;
+	border-radius: 50%;
+	margin: auto;
+	width: 4rem;
+	height: 4rem;
+	text-align: center;
+	border-style: solid;
+	border-color: #413392;
+	border-width: 2px;
+	margin-left: 5px;
+	padding-top: 0.25rem;
+	min-width: 4rem;
+}
+.action:hover {
+	border-width: 4px;
+	text-decoration: none;
+}
+.action:after {
+	font-family: 'FontAwesome';
+    content: '\f25a';
+    font-size: 2rem;
+    color: #413392;
+}
+.outside {
+	display: none;
+}
+.inside {
+	display: block;
+}
 h1.col-md-7 {
 	opacity: 0.7;
 	font-weight: 300;
@@ -81,11 +126,19 @@ footer h5.text-center {
 	font-family: 'FontAwesome';
     content: '\f106';
 }
-@media screen and (max-width: 319px){
+
+@media screen and (min-width: 576px){
 	h1 {
-		font-size: 2rem;
+		font-size: 2.5rem;
+	}
+	.inside {
+		display: none;
+	}
+	.outside {
+		display: inline;
 	}
 }
+
 @media screen and (min-width: 768px){
 	#navbarResponsive {
 	margin-left: -8rem;

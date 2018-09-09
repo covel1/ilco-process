@@ -1,18 +1,18 @@
 /**
 * Remove focus from hamburger button only on transitions but let it work for accesibility purposes 
 */
-$('#navbarResponsive').on('show.bs.collapse', (e) => {
+$('#navbarResponsive').on('show.bs.collapse', function(e) {
 $('.navbar-toggler').blur();
 });
-$('#navbarResponsive').on('hide.bs.collapse', (e) => {
+$('#navbarResponsive').on('hide.bs.collapse', function(e) {
 $('.navbar-toggler').blur();
 });
 
 /**
 * Collapse nav when click anywhere 
 */
-$('#navbarResponsive').on('shown.bs.collapse', (e) => {
-	addEventListener('click', ()=>{
+$('#navbarResponsive').on('shown.bs.collapse', function(e) {
+	addEventListener('click', function() {
 		$('#navbarResponsive').collapse('hide') 
 	})
 });
@@ -30,29 +30,23 @@ $(document).ready(initLoad);
 */
 function smoothMove(){
     $(".slowmo").each(function() {
-        $(this).on('click',(event) => {
+        $(this).on('click', function(event) {
         event.preventDefault();
         var id = $(this).attr('href');
         var oh = $(id).offset()["top"]-72;
         $('html,body').animate({
             scrollTop: oh
             }, 800);
-		navig(this);
+		//navig(this);suspended until a solution for server-side redirect to home is found
         });	
     });	
 }
 
 /**
 * Feed browser's history as such to be used by 'back' and 'forward' buttons of the browser
-*/
-function navig (p){
-    if (p!==undefined){
-        var a = p;
-        var b = a.hash;
-        history.pushState({i:b},'',b);    
-    }       
-}
-window.onpopstate = (event) => {
+
+
+window.onpopstate = function(event) {
     if(event.state!==null){
     var el = event.state.i;
     //console.log(el);
@@ -68,7 +62,15 @@ window.onpopstate = (event) => {
     }
 };
 
-
+function navig (p){
+    if (p!==undefined){
+        var a = p;
+        var b = a.hash;
+		var c = b.slice(1);
+        history.pushState({i:b},'',c);    
+    }       
+}
+*/
           
 
 /* Register events listeners */
@@ -92,15 +94,5 @@ function b2top(){
         }, 800);
     });
     $('#back-to-top').css('display','block');
-}
-*/
-
-/* COLLAPSE NAVBAR IN MOBILE VIEW AFTER CLICKING AN ITEM. CALL NAVIG HISTORY
-function mycollapse(v){
-    var el = v;
-    if ($(window).width()<767){
-        document.getElementById('mynav').getAttributeNode('class').value = 'navbar-collapse collapse';
-    }
-    navig(el);  
 }
 */
