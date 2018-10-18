@@ -1,0 +1,32 @@
+{	"qrys" : [
+		"Ce vă deranjează cel mai mult în relația cu angajații?",
+		"Ce vă supară cel mai mult în relația cu clienții?",
+		"Ce apreciați la parteneri?"
+	],
+	"answrs": [
+		[
+			"<h5>Numarul mare de ore suplimentare</h5>",
+			"<h5>Fluctuația personalului</h5>",
+			"<h5>Competențe insuficiente</h5>"
+		],
+		[
+			"<h5>Nu respectăm termenul de livrare</h5>",
+			"<h5>Avem reclamații privind calitatea</h5>",
+			"<h5>Pierderea unor contracte</h5>"
+		],
+		[
+			"<h5>Este recunoscut pentru calitatea exceptională</h5>",
+			"<h5>Dovedeste flexibilitate la plăti</h5>",
+			"<h5>Livreaza la timp</h5>"
+		]
+	],
+	"outcm": [
+		"dimensionare inadecvată",
+		"decizii empirice",
+		"lipsa strategiei"
+	],
+	"weights": [
+	[[0.4,0,0.1],[0.3,0,0.2],[0,0,0]],
+	[[0.1,0.3,0.1],[0.2,0.2,0.1],[0,0,0]], 
+	[[0.1,0.3,0.2],[0,0.2,0.2],[0,0,0]]
+	]}

@@ -1,3 +1,48 @@
+.btn-primary {
+	background-color: var(--primary);
+}
+.btn-secondary {
+	background-color: var(--secondary);
+}
+#up,
+#down {
+	margin: 1.25rem;
+}
+label:nth-child(1),
+label:nth-child(2),
+label:nth-child(3),
+label:nth-child(4) {
+    margin-right: 1.25rem;
+}
+#cvmp{
+	min-height: 27rem;
+}
+#qst {
+	min-height: 20rem;
+}
+#qst > .btn-group {
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+#qst h5 {
+	color: red;
+}
+#qzcontent {
+	display: none;
+	text-align: center;
+}
+.qzcontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	*background-color: yellow;
+	height:100%;
+	padding: 1rem;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.qzcontainer.border {
+	border-radius: 1rem;
+}
 h1 {
 	font-size: 2rem;
 }
