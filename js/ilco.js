@@ -214,14 +214,17 @@ function compute(e){
 	console.log('a0 este: '+a0);
 	console.log('a1 este: '+a1);
 	console.log('a2 este: '+a2);
-	a0 = a0.toPrecision(2);
-	a1 = a1.toPrecision(2);
-	a2 = a2.toPrecision(2);
+	
+	a0 = round(a0,2);
+	a1 = round(a1,2);
+	a2 = round(a2,2);
+	
 	console.log('a0 este: '+a0);
 	console.log('a1 este: '+a1);
 	console.log('a2 este: '+a2);
 	
 	let altScore = Math.max(a0, a1, a2);
+	console.log('altScore is: '+ altScore);
 	//_qgrd.innerHTML = 'Scor: '+ altScore;
 	if (a0===a1&&a1===a2) {
 		_qexpl.innerHTML = '<h4>Cauza probabilă este '+ outcm[0] + ' și/sau '+ outcm[1] + ' și/sau '+ outcm[2]+'<h4>';
@@ -252,6 +255,9 @@ function compute(e){
 			console.log('sorting error');
 		}
 	}
+}
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 function readValues(p) {
 	let tmp = [];
