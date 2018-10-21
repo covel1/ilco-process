@@ -66,7 +66,7 @@ var int = `<div class="qzcontainer border">
 		</div>`;
 		
 document.getElementById('cvmp').innerHTML = int;
-fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
+fetch('../config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
 
 var qrys = [],
 answrs = [],
@@ -166,55 +166,21 @@ function write (p) {
 	'<label class="btn btn-secondary">5<input type="radio" name=n'+i+' value=5></label></div>'
 	} else {
 		var val = _acc[p][i];
-		switch (val) {
-			case '1':
-			_qst.innerHTML += answrs[p][i]+
-	'<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">'+
-	'<label class="btn btn-secondary active">1<input type="radio" name=n'+i+' value=1 checked></label>'+
-	'<label class="btn btn-secondary">2<input type="radio" name=n'+i+' value=2></label>'+
-	'<label class="btn btn-secondary">3<input type="radio" name=n'+i+' value=3></label>'+
-	'<label class="btn btn-secondary">4<input type="radio" name=n'+i+' value=4></label>'+
-	'<label class="btn btn-secondary">5<input type="radio" name=n'+i+' value=5></label></div>'
-			break;
-			case '2':
-			_qst.innerHTML += answrs[p][i]+
-	'<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">'+
-	'<label class="btn btn-secondary">1<input type="radio" name=n'+i+' value=1></label>'+
-	'<label class="btn btn-secondary active">2<input type="radio" name=n'+i+' value=2 checked></label>'+
-	'<label class="btn btn-secondary">3<input type="radio" name=n'+i+' value=3></label>'+
-	'<label class="btn btn-secondary">4<input type="radio" name=n'+i+' value=4></label>'+
-	'<label class="btn btn-secondary">5<input type="radio" name=n'+i+' value=5></label></div>'
-			break;
-			case '3':
-			_qst.innerHTML += answrs[p][i]+
-	'<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">'+
-	'<label class="btn btn-secondary">1<input type="radio" name=n'+i+' value=1></label>'+
-	'<label class="btn btn-secondary">2<input type="radio" name=n'+i+' value=2></label>'+
-	'<label class="btn btn-secondary active">3<input type="radio" name=n'+i+' value=3 checked></label>'+
-	'<label class="btn btn-secondary">4<input type="radio" name=n'+i+' value=4></label>'+
-	'<label class="btn btn-secondary">5<input type="radio" name=n'+i+' value=5></label></div>'
-			break;
-			case '4':
-			_qst.innerHTML += answrs[p][i]+
-	'<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">'+
-	'<label class="btn btn-secondary">1<input type="radio" name=n'+i+' value=1></label>'+
-	'<label class="btn btn-secondary">2<input type="radio" name=n'+i+' value=2></label>'+
-	'<label class="btn btn-secondary">3<input type="radio" name=n'+i+' value=3></label>'+
-	'<label class="btn btn-secondary active">4<input type="radio" name=n'+i+' value=4 checked></label>'+
-	'<label class="btn btn-secondary">5<input type="radio" name=n'+i+' value=5></label></div>'
-			break;
-			case '5':
-			_qst.innerHTML += answrs[p][i]+
-	'<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">'+
-	'<label class="btn btn-secondary">1<input type="radio" name=n'+i+' value=1></label>'+
-	'<label class="btn btn-secondary">2<input type="radio" name=n'+i+' value=2></label>'+
-	'<label class="btn btn-secondary">3<input type="radio" name=n'+i+' value=3></label>'+
-	'<label class="btn btn-secondary">4<input type="radio" name=n'+i+' value=4></label>'+
-	'<label class="btn btn-secondary active">5<input type="radio" name=n'+i+' value=5 checked></label></div>'
-			break;
-		}	
+		_qst.innerHTML += answrs[p][i] + fillBackAnswers(val,i);
 	};
 	}
+}
+function fillBackAnswers(k,i) {
+	let result = '';
+	const resultIni = '<div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">';
+	for(j=1;j<6;j++){
+		if(j === parseInt(k,10)){
+			result += '<label class="btn btn-secondary active">'+j+'<input type="radio" name=n'+i+' value='+j+' '+'checked></label>';
+		} else {
+		result += '<label class="btn btn-secondary">'+j+'<input type="radio" name=n'+i+' value='+j+'></label>';
+		}
+	}
+	return resultIni+result;
 }	
 function compute(e){
 	e.preventDefault();
@@ -245,7 +211,12 @@ function compute(e){
 			}
 		}
 	}
-	
+	console.log('a0 este: '+a0);
+	console.log('a1 este: '+a1);
+	console.log('a2 este: '+a2);
+	a0 = a0.toPrecision(2);
+	a1 = a1.toPrecision(2);
+	a2 = a2.toPrecision(2);
 	console.log('a0 este: '+a0);
 	console.log('a1 este: '+a1);
 	console.log('a2 este: '+a2);
