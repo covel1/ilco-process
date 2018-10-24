@@ -55,11 +55,13 @@ h1 {
 }
 .cta .card-body {
 	background-color: #413392;
-	color:#d3cd36;
+	*color:#d3cd36;
+	color: white;
 	border-radius: .5em;
 }
 .action {
-	background-color: #d3cd36;
+	*background-color: #d3cd36;
+	background-color: whitesmoke;
 	border-radius: 50%;
 	margin: auto;
 	width: 4rem;
@@ -109,10 +111,12 @@ button.btn.btn-primary {
 	padding-top: 5.625rem;
 }
 blockquote.blockquote {
-	opacity: 0.7;
+	*opacity: 0.7;
+	color:#849233;
+	font-weight:700;
 }
 p.card-text {
-	opacity: 0.85;
+	*opacity: 0.85;
 }
 .padding-top {
 	padding-top: 3rem;
@@ -187,5 +191,11 @@ footer h5.text-center {
 @media screen and (min-width: 768px){
 	#navbarResponsive {
 	margin-left: -8rem;
+}
+article.col-md-7{
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 1rem;
+	padding: 3rem;
+	margin-bottom: 2rem;
 }
 }
