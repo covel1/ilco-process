@@ -1,0 +1,36 @@
+@keyframes expandHeight {
+	0% {background-color: whitesmoke; min-height: 0}
+	100% {background-color: white; min-height: 27rem}
+}
+.expand {
+	animation-name: expandHeight;
+	animation-duration: 0.75s;
+	animation-fill-mode: forwards;
+}
+#qst > .btn-group {
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+#qst h5 {
+	color: #849233;
+	font-weight: 700;
+}
+#qst h4 {
+	color: var(--primary);
+}
+#qzcontent {
+	display: none;
+	text-align: center;
+	min-height: 21rem;
+}
+.qzcontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+	padding: 1rem;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.qzcontainer.border {
+	border-radius: 1rem;
+}
