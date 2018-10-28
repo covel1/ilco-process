@@ -53,13 +53,13 @@ let _pos = 0,
 	_qexpl.style.display = 'none';
 	_play.addEventListener('click', init);
 	_btnEnd.addEventListener('click', compute);
-	_qzcontainer.addEventListener('animationend', listener);
+	_qzcontainer.addEventListener('animationend', postAnimation);
 function init(){
 	_play.style.display = 'none';
 	_title.style.display = 'none';
 	_qzcontainer.className = 'qzcontainer border expand';
 }
-function listener() { //helps animation
+function postAnimation() { //helps animation
 	_content.style.display = 'block';
 	console.log('pozitia initiala: ' + _pos);
 	_buttNav.forEach(function(val){

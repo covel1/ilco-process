@@ -1,11 +1,15 @@
 @keyframes expandHeight {
 	0% {background-color: whitesmoke; min-height: 0}
-	100% {background-color: white; min-height: 27rem}
+	25% {min-height: 7rem}
+	50% {min-height: 14rem}
+	75% {min-height: 21rem}
+	100% {background-color: white; min-height: 28rem}
 }
 .expand {
 	animation-name: expandHeight;
-	animation-duration: 0.75s;
+	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
+	animation-timing-function: linear;
 }
 #qst > .btn-group {
 	padding-bottom: 0.5rem;
