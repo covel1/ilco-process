@@ -1,7 +1,9 @@
+/*
 @keyframes expandHeight {
 	0% {background-color: whitesmoke; min-height: 11rem}
 	100% {background-color: white; min-height: 28rem}
 }
+*/
 .expand {
 	animation-name: expandHeight;
 	animation-duration: 1s;
