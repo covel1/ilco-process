@@ -6,7 +6,7 @@
 	animation-name: expandHeight;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
-	animation-timing-function: linear;
+	*animation-timing-function: linear;
 }
 #qst > .btn-group {
 	padding-bottom: 0.5rem;
