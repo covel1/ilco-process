@@ -1,12 +1,9 @@
 @keyframes expandHeight {
 	0% {background-color: whitesmoke; min-height: 11rem}
-	25% {min-height: 7rem}
-	50% {min-height: 14rem}
-	75% {min-height: 21rem}
 	100% {background-color: white; min-height: 28rem}
 }
 .expand {
-	min-height: 11rem;
+	min-height: 11rem!important;
 	animation-name: expandHeight;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
