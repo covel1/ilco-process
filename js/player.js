@@ -64,7 +64,7 @@ function init(){
 function addKeyFrames(p) {
 	let _style = document.querySelector('style');
 	let _iniStyle = _style.innerText;
-	let _endStyle = _style.innerText + ' @keyframes expandHeight {0% {background-color: whitesmoke; min-height: 11rem} 100% {background-color: white; min-height: 27rem}}';
+	let _endStyle = _style.innerText + ' @keyframes expandHeight {0% {background-color: whitesmoke; min-height:'+p+'rem} 100% {background-color: white; min-height: 27rem}}';
 	_style.innerText = _endStyle;
 }
 function postAnimation() { //helps animation
