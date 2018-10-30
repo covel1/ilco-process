@@ -6,7 +6,7 @@
 */
 .expand {
 	animation-name: expandHeight;
-	animation-duration: 1s;
+	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 }
 #qst > .btn-group {
