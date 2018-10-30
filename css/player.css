@@ -1,5 +1,5 @@
 @keyframes expandHeight {
-	0% {background-color: whitesmoke; min-height: 0}
+	0% {background-color: whitesmoke; min-height: 21rem}
 	25% {min-height: 7rem}
 	50% {min-height: 14rem}
 	75% {min-height: 21rem}
@@ -28,6 +28,7 @@
 	min-height: 21rem;
 }
 .qzcontainer {
+	min-height: 21rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
