@@ -6,6 +6,7 @@
 	100% {background-color: white; min-height: 28rem}
 }
 .expand {
+	min-height: 11rem;
 	animation-name: expandHeight;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
