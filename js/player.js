@@ -59,7 +59,7 @@ function init(){
 	addKeyFrames(_qzcmH);
 	_play.style.display = 'none';
 	_title.style.display = 'none';
-	_qzcontainer.className = 'qzcontainer border expand';
+	_qzcontainer.className += ' expand';
 }
 function addKeyFrames(p) {
 	let _style = document.querySelector('style');
