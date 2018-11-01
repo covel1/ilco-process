@@ -65,7 +65,7 @@ function init(){
 }
 function expand() {
 	if(_hn < 27){
-		_hn += 1;
+		_hn += 3;
 		_qzcontainer.style.minHeight = String(_hn) + 'rem';
 		window.requestAnimationFrame(expand);
 	} else {
