@@ -53,18 +53,31 @@ let _pos = 0,
 	_qexpl.style.display = 'none';
 	_play.addEventListener('click', init);
 	_btnEnd.addEventListener('click', compute);
-	_qzcontainer.addEventListener('animationend', postAnimation);
+	//_qzcontainer.addEventListener('animationend', postAnimation);
+	_hn = _qzcontainer.clientHeight/16;
 function init(){
-	let _qzcmH = _qzcontainer.clientHeight/16;
-	addKeyFrames(_qzcmH);
+	//let _qzcmH = _qzcontainer.clientHeight/16;
+	//addKeyFrames(_qzcmH);
 	_play.style.display = 'none';
 	_title.style.display = 'none';
-	_qzcontainer.className += ' expand';
+	//_qzcontainer.className += ' expand';
+	window.requestAnimationFrame(expand);
 }
+function expand() {
+	if(_hn < 27){
+		_hn += 2;
+		_qzcontainer.style.minHeight = String(_hn) + 'rem';
+		window.requestAnimationFrame(expand);
+	} else {
+		postAnimation();
+	}	
+}
+/*
 function addKeyFrames(p) {
 	let _style = document.querySelector('style');
 	_style.innerText += ' @keyframes expandHeight {0% {background-color: whitesmoke; min-height:'+p+'rem} 100% {background-color: white; min-height: 27rem}}';
 }
+*/
 function postAnimation() { //helps animation
 	_content.style.display = 'block';
 	console.log('pozitia initiala: ' + _pos);
