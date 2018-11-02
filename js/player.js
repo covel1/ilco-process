@@ -64,7 +64,7 @@ function init(){
 	window.requestAnimationFrame(expand);
 }
 function expand() {
-	if(_hn < 27){
+	if(_hn < 0){
 		_hn += 3;
 		_qzcontainer.style.minHeight = String(_hn) + 'rem';
 		window.requestAnimationFrame(expand);
