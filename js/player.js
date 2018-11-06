@@ -17,11 +17,32 @@ var int = `<div class="qzcontainer border">
 			<div id="qresults">
 				<div id="qgrade"></div>
 				<div id="qexplain"></div>
-				
 			</div>
 		</div>`;
-		
-document.getElementById('cvmp').innerHTML = int;
+
+function start(){
+	document.getElementById('cvmp').innerHTML = int;
+	_pos = 0,
+	_acc = [];
+	_play = document.getElementById('play'),
+	_qzcontainer = document.querySelector('.qzcontainer');
+	_content = document.getElementById('qzcontent'),
+	_buttNav = document.querySelectorAll('#qzcontent button'),
+	_btnDown = document.getElementById('down'),
+	_btnUp = document.getElementById('up'),
+	_btnEnd = document.getElementById('end'),
+	_qst = document.getElementById('qst'),
+	_title = document.getElementById('qztitle'),
+	_qgrd = document.getElementById('qgrade'),
+	_qexpl = document.getElementById('qexplain');
+	_btnEnd.style.display = 'none';
+	_qgrd.style.display = 'none';
+	_qexpl.style.display = 'none';
+	_play.addEventListener('click', init);
+	_btnEnd.addEventListener('click', compute);
+}
+start();		
+//document.getElementById('cvmp').innerHTML = int;
 fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
 
 var qrys = [],
@@ -35,6 +56,7 @@ function use(a) {
     outcm = a.outcm;
     weights = a.weights;
 }
+/*
 let _pos = 0,
 	_acc = [];
 	const _play = document.getElementById('play'),
@@ -53,13 +75,10 @@ let _pos = 0,
 	_qexpl.style.display = 'none';
 	_play.addEventListener('click', init);
 	_btnEnd.addEventListener('click', compute);
-	_qzcontainer.addEventListener('animationend', postAnimation);
+*/
 function init(){
 	_play.style.display = 'none';
 	_title.style.display = 'none';
-	_qzcontainer.className = 'qzcontainer border expand';
-}
-function postAnimation() { //helps animation
 	_content.style.display = 'block';
 	console.log('pozitia initiala: ' + _pos);
 	_buttNav.forEach(function(val){
@@ -146,12 +165,15 @@ function compute(e){
 	e.preventDefault();
 	_content.style.display = 'none';
 	_btnEnd.style.display = 'none';
-	_qgrd.style.display = 'block';
-	_qexpl.style.display = 'block';
+	//_qgrd.style.display = 'block';
+	_qexpl.style.display = 'flex';
 	console.log("SUBMITED");
-	let a0 = 0;//alternative 1
-	let a1 = 0;//alternative 2
-	let a2 = 0;//alternative 3
+	let a0 = 0, a1 = 0, a2 = 0;
+	/*
+	a0 = alternative 1
+	a1 = alternative 2
+	a2 = alternative 3
+	*/
 	for (m=0; m<outcm.length; m++){
 		for (k=0; k<qrys.length; k++) {
 			for (j=0; j<answrs[k].length; j++){
@@ -215,6 +237,12 @@ function compute(e){
 			console.log('sorting error');
 		}
 	}
+	let rept = _qexpl.appendChild(document.createElement('I'));
+	rept.className ='fa fa-repeat over';
+	rept.addEventListener('click', repeat);
+}
+function repeat(){
+	start();
 }
 function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
