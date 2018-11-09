@@ -1,9 +1,8 @@
-console.log('I came from defered ilco.js');
-
-var cuv_ini = `<h2>scurt chestionar</h2><p>Răspunde la următoarele întrebări prin alegerea unei note
+(function start(){
+let cuv_ini = `<h2>scurt chestionar</h2><p>Răspunde la următoarele întrebări prin alegerea unei note
 între 1 si 5. "1" pentru cel mai puțin iar "5" pentru cel mai potrivit. Vei obține o indicație asupra cauzelor potențiale ale problemelor cu care te confrunți.</p> `;
 
-var int = `<div class="qzcontainer border">
+let int = `<div class="qzcontainer border">
 			<div id="qztitle">
 				${cuv_ini}
 				<button id="play" class="btn btn-success" type="button">START</button>
@@ -20,35 +19,15 @@ var int = `<div class="qzcontainer border">
 			</div>
 		</div>`;
 
-function start(){
-	document.getElementById('cvmp').innerHTML = int;
-	_pos = 0,
-	_acc = [];
-	_play = document.getElementById('play'),
-	_qzcontainer = document.querySelector('.qzcontainer');
-	_content = document.getElementById('qzcontent'),
-	_buttNav = document.querySelectorAll('#qzcontent button'),
-	_btnDown = document.getElementById('down'),
-	_btnUp = document.getElementById('up'),
-	_btnEnd = document.getElementById('end'),
-	_qst = document.getElementById('qst'),
-	_title = document.getElementById('qztitle'),
-	_qgrd = document.getElementById('qgrade'),
-	_qexpl = document.getElementById('qexplain');
-	_btnEnd.style.display = 'none';
-	_qgrd.style.display = 'none';
-	_qexpl.style.display = 'none';
-	_play.addEventListener('click', init);
-	_btnEnd.addEventListener('click', compute);
-}
-start();		
-//document.getElementById('cvmp').innerHTML = int;
-fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
+document.getElementById('cvmp').innerHTML = int;
+//fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
+fetch('../config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
 
-var qrys = [],
+let qrys = [],
 answrs = [],
 outcm = [],
 weights = [];
+
 function use(a) {
     console.log(a);
     qrys = a.qrys;
@@ -56,26 +35,28 @@ function use(a) {
     outcm = a.outcm;
     weights = a.weights;
 }
-/*
+
 let _pos = 0,
 	_acc = [];
-	const _play = document.getElementById('play'),
-	_qzcontainer = document.querySelector('.qzcontainer');
-	_content = document.getElementById('qzcontent'),
-	_buttNav = document.querySelectorAll('#qzcontent button'),
-	_btnDown = document.getElementById('down'),
-	_btnUp = document.getElementById('up'),
-	_btnEnd = document.getElementById('end'),
-	_qst = document.getElementById('qst'),
-	_title = document.getElementById('qztitle'),
-	_qgrd = document.getElementById('qgrade'),
-	_qexpl = document.getElementById('qexplain');
-	_btnEnd.style.display = 'none';
-	_qgrd.style.display = 'none';
-	_qexpl.style.display = 'none';
-	_play.addEventListener('click', init);
-	_btnEnd.addEventListener('click', compute);
-*/
+let _play = document.getElementById('play'),
+_qzcontainer = document.querySelector('.qzcontainer'),
+_content = document.getElementById('qzcontent'),
+_buttNav = document.querySelectorAll('#qzcontent button'),
+_btnDown = document.getElementById('down'),
+_btnUp = document.getElementById('up'),
+_btnEnd = document.getElementById('end'),
+_qst = document.getElementById('qst'),
+_title = document.getElementById('qztitle'),
+_qgrd = document.getElementById('qgrade'),
+_qexpl = document.getElementById('qexplain'),
+_qresults = document.getElementById('qresults');
+
+_btnEnd.style.display = 'none';
+_qgrd.style.display = 'none';
+_qexpl.style.display = 'none';
+_play.addEventListener('click', init);
+_btnEnd.addEventListener('click', compute);
+
 function init(){
 	_play.style.display = 'none';
 	_title.style.display = 'none';
@@ -166,7 +147,7 @@ function compute(e){
 	_content.style.display = 'none';
 	_btnEnd.style.display = 'none';
 	//_qgrd.style.display = 'block';
-	_qexpl.style.display = 'flex';
+	_qexpl.style.display = 'inline';
 	console.log("SUBMITED");
 	let a0 = 0, a1 = 0, a2 = 0;
 	/*
@@ -237,7 +218,7 @@ function compute(e){
 			console.log('sorting error');
 		}
 	}
-	let rept = _qexpl.appendChild(document.createElement('I'));
+	let rept = _qresults.appendChild(document.createElement('I'));
 	rept.className ='fa fa-repeat over';
 	rept.addEventListener('click', repeat);
 }
@@ -258,3 +239,4 @@ function readValues(p) {
 	_acc.splice(p,0,tmp);
 	console.log(_acc);
 }
+})();
