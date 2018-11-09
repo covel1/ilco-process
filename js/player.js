@@ -20,8 +20,8 @@ let int = `<div class="qzcontainer border">
 		</div>`;
 
 document.getElementById('cvmp').innerHTML = int;
-//fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
-fetch('../config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
+fetch('https://covel1.github.io/ilco-process/config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
+//fetch('../config.json').then(res => {return res.json()}).then(jsn => {use(jsn)});
 
 let qrys = [],
 answrs = [],
