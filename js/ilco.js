@@ -64,7 +64,6 @@ outcm = [],
 weights = [];
 
 function use(a) {
-    console.log(a);
     qrys = a.qrys;
     answrs = a.answrs;
     outcm = a.outcm;
@@ -96,7 +95,6 @@ function init(){
 	_play.style.display = 'none';
 	_title.style.display = 'none';
 	_content.style.display = 'block';
-	console.log('pozitia initiala: ' + _pos);
 	_buttNav.forEach(function(val){
 		val.addEventListener('click', move);	
 	});
@@ -112,7 +110,6 @@ var move =(function () {
 		if (btn === 'down') {
 			_btnEnd.style.display = 'none';
 			_pos--;
-			console.log('minus da: '+ _pos);
 			write(_pos);
 		};
 		if (_pos == 0) {
@@ -122,14 +119,10 @@ var move =(function () {
 		};
 		if (btn === 'up') {
 			if(_acc[_pos]) {
-				console.log("remove from position "+_pos+" these values "+_acc[_pos]);
 				_acc.splice(_pos,1);
-				console.log("new _acc");
-				console.log(_acc);
 			};
 			readValues(_pos);
 			_pos++;
-			console.log('plus da: '+ _pos);
 			if(_pos === qrys.length ){
 				_qst.innerHTML = '<h4 style="padding-top:30%">Puteți revedea răspunsurile sau încheia chestionarul</h4>';
 				_btnUp.style.display ='none';
@@ -181,9 +174,7 @@ function compute(e){
 	e.preventDefault();
 	_content.style.display = 'none';
 	_btnEnd.style.display = 'none';
-	//_qgrd.style.display = 'block';
 	_qexpl.style.display = 'inline';
-	console.log("SUBMITED");
 	var a0 = 0, a1 = 0, a2 = 0;
 	/*
 	a0 = alternative 1
@@ -209,21 +200,12 @@ function compute(e){
 			}
 		}
 	}
-	console.log('a0 este: '+a0);
-	console.log('a1 este: '+a1);
-	console.log('a2 este: '+a2);
 	
 	a0 = round(a0,2);
 	a1 = round(a1,2);
 	a2 = round(a2,2);
 	
-	console.log('a0 este: '+a0);
-	console.log('a1 este: '+a1);
-	console.log('a2 este: '+a2);
-	
 	var altScore = Math.max(a0, a1, a2);
-	console.log('altScore is: '+ altScore);
-	//_qgrd.innerHTML = 'Scor: '+ altScore;
 	if (a0===a1&&a1===a2) {
 		_qexpl.innerHTML = '<h4>Cauza probabilă este '+ outcm[0] + ' și/sau '+ outcm[1] + ' și/sau '+ outcm[2]+'<h4>';
 	} else if (a0===a1&&a1 > a2) { 
@@ -272,7 +254,6 @@ function readValues(p) {
 		}	
 	};
 	_acc.splice(p,0,tmp);
-	console.log(_acc);
 }
 })();
 
