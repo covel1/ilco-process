@@ -50,7 +50,7 @@ var int = '<div class="qzcontainer border"><div id="qztitle">'+cuv_ini+'<button 
 $('#cvmp')[0].innerHTML = int;
 
 $.ajax({
-	 url : '../config.json',
+	 url : 'https://covel1.github.io/ilco-process/config.json',
 	 type : 'get',
 	 dataType: 'json',
 	 success : function (response) {
